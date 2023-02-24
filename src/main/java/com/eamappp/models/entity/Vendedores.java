@@ -1,6 +1,11 @@
 package com.eamappp.models.entity;
 
-public class Cliente {
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+public class Vendedores {
     private String nombre;
     private String apellido;
     private String email;
@@ -24,15 +29,18 @@ public class Cliente {
         this.email = email;
     }
 
-    public Cliente() {
+    public Vendedores() {
     }
-    
-    public Cliente(String nombre, String apellido, String email) {
+
+    public Vendedores(String nombre, String apellido, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
     }
-
-    
+    @ModelAttribute("vendedores")
+    public List<Vendedores> poblarVendedores(){
+        List<Vendedores> vendedores = Arrays.asList(new Vendedores("Pepito","Perez","pepito@prueba.com"), new Vendedores("cosme","fulanito","cosme@prueba.com"));
+        return vendedores;
+    }
 
 }
