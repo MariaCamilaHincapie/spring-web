@@ -1,5 +1,10 @@
 package com.eamappp.models.entity;
 
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.ModelAttribute;
+
 public class Cliente {
     private String nombre;
     private String apellido;
@@ -33,6 +38,10 @@ public class Cliente {
         this.email = email;
     }
 
-    
+    @ModelAttribute("clientes")
+    public List<Cliente> poblarClientes(){
+        List<Cliente> clientes = Arrays.asList(new Cliente("Pepito","Perez","pepito@prueba.com"), new Cliente("cosme","fulanito","cosme@prueba.com"));
+        return clientes;
+    }
 
 }
