@@ -11,7 +11,7 @@ import com.eamappp.models.entity.Cliente;
 @RequestMapping("/cliente")
 
 public class clientController {
-    @GetMapping({ "/", "", "/index" })
+    @GetMapping({ "/", ""})
     public String indexCliente(Model model) {
         Cliente cliente = new Cliente();
         model.addAttribute("titulo", "Perfil");
